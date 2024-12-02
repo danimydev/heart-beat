@@ -1,6 +1,10 @@
 {
   "tasks": {
-    "start": "deno run --unstable-cron --unstable-kv src/main.ts",
-    "dev": "deno run --unstable-cron --unstable-kv --watch src/main.ts"
+    "start": "deno run --unstable-cron --unstable-kv --allow-net src/main.ts",
+    "dev": "deno run --unstable-cron --unstable-kv --allow-net --watch src/main.ts"
+  },
+  "imports": {
+    "@std/uuid": "jsr:@std/uuid@^1.0.4",
+    "valibot": "npm:valibot@^1.0.0-beta.9"
   }
 }
