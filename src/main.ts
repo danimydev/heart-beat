@@ -41,7 +41,7 @@ Deno.serve(async (request) => {
 });
 
 Deno.cron(
-  "Runs every 10 mins to check heartbeat",
+  "Check services health status",
   { minute: { every: 5 } },
   async () => {
     console.log("Running check heartbeat cron job...");
