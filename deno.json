@@ -1,7 +1,7 @@
 {
   "tasks": {
-    "start": "deno run --unstable-cron --unstable-kv --allow-net src/main.ts",
-    "dev": "deno run --unstable-cron --unstable-kv --allow-net --watch src/main.ts"
+    "start": "deno run --unstable-cron --unstable-kv --allow-net --env-file --allow-env src/main.ts",
+    "dev": "deno run --unstable-cron --unstable-kv --allow-net --env-file --allow-env --watch src/main.ts"
   },
   "imports": {
     "@std/uuid": "jsr:@std/uuid@^1.0.4",
