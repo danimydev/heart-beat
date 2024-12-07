@@ -28,6 +28,10 @@ Deno.serve(async (request) => {
   if (!success) {
     return new Response("Bad Request", { status: 400 });
   }
+  const secret = request.headers.get("x-heart-beat-secret");
+  if (!secret || secret !== String(Deno.env.get("HEART_BEAT_SECRET"))) {
+    return new Response("Unauthorized", { status: 401 });
+  }
   const addedService = await serviceRepository.addService(output);
   return new Response(
     JSON.stringify({ message: "service added", addedService }),
