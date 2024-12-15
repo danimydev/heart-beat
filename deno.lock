@@ -1,12 +1,16 @@
 {
   "version": "4",
   "specifiers": {
+    "jsr:@hono/hono@^4.6.14": "4.6.14",
     "jsr:@std/bytes@^1.0.2": "1.0.4",
     "jsr:@std/crypto@^1.0.3": "1.0.3",
     "jsr:@std/uuid@^1.0.4": "1.0.4",
     "npm:valibot@^1.0.0-beta.9": "1.0.0-beta.9"
   },
   "jsr": {
+    "@hono/hono@4.6.14": {
+      "integrity": "b39a5488266adf448fb1081bc3071a0d05145e72f3ab3ff83cf140e780c6c1de"
+    },
     "@std/bytes@1.0.4": {
       "integrity": "11a0debe522707c95c7b7ef89b478c13fb1583a7cfb9a85674cd2cc2e3a28abc"
     },
@@ -28,6 +32,7 @@
   },
   "workspace": {
     "dependencies": [
+      "jsr:@hono/hono@^4.6.14",
       "jsr:@std/uuid@^1.0.4",
       "npm:valibot@^1.0.0-beta.9"
     ]

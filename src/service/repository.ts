@@ -10,7 +10,7 @@ export type Service = {
   healthcheckUrl: string;
 };
 
-export async function getServices() {
+export async function list() {
   const servicesIterator = kv.list<Service>({ prefix: [SERVICES_KEY] });
   const services: Service[] = [];
   for await (const s of servicesIterator) {
@@ -19,7 +19,7 @@ export async function getServices() {
   return services;
 }
 
-export async function addService(service: Omit<Service, "id">) {
+export async function add(service: Omit<Service, "id">) {
   const data = new TextEncoder().encode(service.name);
   const uuid = await v5.generate(NAMESPACE_DNS, data);
   await kv.set([SERVICES_KEY, uuid], { id: uuid, ...service });
@@ -28,4 +28,8 @@ export async function addService(service: Omit<Service, "id">) {
     ...service,
   };
   return addedService;
+}
+
+export async function remove(id: string) {
+  await kv.delete([SERVICES_KEY, id]);
 }

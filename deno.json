@@ -4,6 +4,7 @@
     "dev": "deno run --unstable-cron --unstable-kv --allow-net --env-file --allow-env --watch src/main.ts"
   },
   "imports": {
+    "@hono/hono": "jsr:@hono/hono@^4.6.14",
     "@std/uuid": "jsr:@std/uuid@^1.0.4",
     "valibot": "npm:valibot@^1.0.0-beta.9"
   }
